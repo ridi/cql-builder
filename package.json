@@ -1,0 +1,51 @@
+{
+  "name": "cql-builder",
+  "version": "1.0.0",
+  "description": "Cassandra CQL Builder",
+  "main": "dist/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --forceExit",
+    "build": "webpack"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageReporters": [
+      "clover",
+      "html"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/tests/"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridibooks/cql-builder.git"
+  },
+  "keywords": [
+    "CQL",
+    "query",
+    "builder",
+    "Cassandra"
+  ],
+  "author": "Kyungmi Koong <kyungmi.k@ridi.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ridibooks/cql-builder/issues"
+  },
+  "homepage": "https://github.com/ridibooks/cql-builder#readme",
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
+    "jest": "^19.0.2",
+    "webpack": "^2.3.2"
+  }
+}
