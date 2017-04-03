@@ -1,5 +1,5 @@
 {
-  "name": "cql-builder",
+  "name": "cassandra-cql-builder",
   "version": "1.0.0",
   "description": "Cassandra CQL Builder",
   "main": "dist/index.js",
