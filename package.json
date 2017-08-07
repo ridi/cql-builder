@@ -42,10 +42,10 @@
   },
   "homepage": "https://github.com/ridibooks/cql-builder#readme",
   "devDependencies": {
-    "babel-jest": "^19.0.0",
-    "babel-loader": "^6.4.1",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^7.1.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
-    "jest": "^19.0.2",
-    "webpack": "^2.3.2"
+    "jest": "^20.0.4",
+    "webpack": "^3.4.1"
   }
 }
