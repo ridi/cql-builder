@@ -1,5 +1,7 @@
 # cql-builder
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ridibooks/cql-builder.svg)](https://greenkeeper.io/)
+
 Simple Cassandra CQL Builder in Javascript
 
 ## Installation
