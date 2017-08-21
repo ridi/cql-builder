@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "jest --forceExit",
-    "build": "webpack"
+    "build": "webpack",
+    "lint": "eslint ./src"
   },
   "jest": {
     "verbose": true,
@@ -42,9 +43,11 @@
   },
   "homepage": "https://github.com/ridibooks/cql-builder#readme",
   "devDependencies": {
+    "@ridi/eslint-config": "*",
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.1.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
+    "eslint": "^4.5.0",
     "jest": "^20.0.4",
     "webpack": "^3.5.5"
   }

@@ -1,5 +1,5 @@
 {
-  "extends": "ridibooks",
+  "extends": "@ridi",
   "rules": {
     // For normal usage of Koa
     "require-yield": "off"
