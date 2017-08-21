@@ -1,6 +1,6 @@
 {
   "name": "cassandra-cql-builder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cassandra CQL Builder",
   "main": "dist/index.js",
   "directories": {
