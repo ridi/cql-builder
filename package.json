@@ -44,7 +44,7 @@
   "homepage": "https://github.com/ridibooks/cql-builder#readme",
   "devDependencies": {
     "@ridi/eslint-config": "*",
-    "babel-jest": "^20.0.3",
+    "babel-jest": "^21.0.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
     "eslint": "^4.5.0",
