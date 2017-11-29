@@ -1,6 +1,7 @@
 # cql-builder
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/ridibooks/cql-builder.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/ridi/cql-builder.svg?branch=master)](https://travis-ci.org/ridi/cql-builder)
+[![Greenkeeper badge](https://badges.greenkeeper.io/ridi/cql-builder.svg)](https://greenkeeper.io/)
 
 Simple Cassandra CQL Builder in Javascript
 
@@ -127,7 +128,7 @@ const cql = Delete()
 ## Development
 
 ```
-$ git clone git@github.com:ridibooks/cql-builder.git
+$ git clone git@github.com:ridi/cql-builder.git
 $ cd cql-builder
 $ npm install
 ```
