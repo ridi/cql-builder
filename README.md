@@ -1,5 +1,6 @@
 # cql-builder
 
+[![npm](https://img.shields.io/npm/v/@ridi/cql-builder.svg)](https://www.npmjs.com/package/@ridi/cql-builder)
 [![Build Status](https://travis-ci.org/ridi/cql-builder.svg?branch=master)](https://travis-ci.org/ridi/cql-builder)
 [![Greenkeeper badge](https://badges.greenkeeper.io/ridi/cql-builder.svg)](https://greenkeeper.io/)
 
