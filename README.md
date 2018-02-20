@@ -9,13 +9,13 @@ Simple Cassandra CQL Builder in Javascript
 ## Installation
 
 ```
-$ npm install --save cassandra-cql-builder
+$ npm install --save @ridi/cql-builder
 ```
 
 ## Usage
 
 ```javascript
-import { Insert, Select, Update, Delete, CqlBuilderError } from 'cassandra-cql-builder';
+import { Insert, Select, Update, Delete, CqlBuilderError } from '@ridi/cql-builder';
 
 const result = Select().table('test_table', 'test_keyspace').build();
 
