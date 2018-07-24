@@ -164,4 +164,4 @@ const Insert = () => new CqlBuilder(COMMANDS.insert);
 const Select = () => new CqlBuilder(COMMANDS.select);
 const Update = () => new CqlBuilder(COMMANDS.update);
 const Delete = () => new CqlBuilder(COMMANDS.delete);
-export { Insert, Select, Update, Delete, CqlBuilderError };
+export { Insert, Select, Update, Delete, CqlBuilderError, CqlBuilder };
