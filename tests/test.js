@@ -102,8 +102,8 @@ describe('select', () => {
     expect(result1.query).toBe('SELECT COUNT(*) FROM test_keyspace.test_table');
   });
   test('with filtering', () => {
-    const result1 = cqlb.Select().table('test_table').filtering().build();
-    const result2 = cqlb.Select().table('test_table').filtering().filtering(false).build();
+    const result1 = Select().table('test_table').filtering().build();
+    const result2 = Select().table('test_table').filtering().filtering(false).build();
     expect(result1.query).toBe('SELECT * FROM test_table ALLOW FILTERING');
     expect(result2.query).toBe('SELECT * FROM test_table');
   });
