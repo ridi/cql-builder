@@ -101,6 +101,12 @@ describe('select', () => {
     const result1 = Select().table('test_table', 'test_keyspace').field('COUNT(*)').build();
     expect(result1.query).toBe('SELECT COUNT(*) FROM test_keyspace.test_table');
   });
+  test('with filtering', () => {
+    const result1 = cqlb.Select().table('test_table').filtering().build();
+    const result2 = cqlb.Select().table('test_table').filtering().filtering(false).build();
+    expect(result1.query).toBe('SELECT * FROM test_table ALLOW FILTERING');
+    expect(result2.query).toBe('SELECT * FROM test_table');
+  });
   test('with all', () => {
     const result1 = Select()
       .table('test_table', 'test_keyspace')
@@ -111,6 +117,7 @@ describe('select', () => {
       .where('key3 IN (?, ?)', 3000, 4000)
       .limit(5000)
       .order('key1 DESC')
+      .filtering()
       .build();
     const result2 = Select()
       .table('test_table', 'test_keyspace')
@@ -126,8 +133,9 @@ describe('select', () => {
       .set('column3', 'c')
       .set('column4', 'd')
       .option('TTL', 86400)
+      .filtering()
       .build();
-    expect(result1.query).toBe('SELECT column1, column2, column3 FROM test_keyspace.test_table WHERE key1 = ? AND key2 > ? AND key3 IN (?, ?) ORDER BY key1 DESC LIMIT ?');
+    expect(result1.query).toBe('SELECT column1, column2, column3 FROM test_keyspace.test_table WHERE key1 = ? AND key2 > ? AND key3 IN (?, ?) ORDER BY key1 DESC LIMIT ? ALLOW FILTERING');
     expect(result2.query).toBe(result1.query);
     expect(result1.params).toEqual([1000, 2000, 3000, 4000, 5000]);
     expect(result2.params).toEqual(result1.params);

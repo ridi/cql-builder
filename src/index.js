@@ -14,8 +14,8 @@ const COMMANDS = Object.freeze({
   },
   select: {
     name: 'SELECT',
-    query: context => `SELECT ${context.field} FROM ${context.table} ${context.where} ${context.order} ${context.limit}`,
-    using: ['field', 'table', 'where', 'order', 'limit'],
+    query: context => `SELECT ${context.field} FROM ${context.table} ${context.where} ${context.order} ${context.limit} ${context.filtering}`,
+    using: ['field', 'table', 'where', 'order', 'limit', 'filtering'],
   },
   update: {
     name: 'UPDATE',
@@ -39,6 +39,7 @@ const EXPRESSIONS = Object.freeze({
   set: exp => `${exp.set.map(field => `${field} = ?`).join(', ')}`,
   option: exp => `${exp.option.length === 0 ? '' : `USING ${exp.option.map(option => `${option} ?`).join(' AND ')}`}`,
   condition: exp => `${exp.upsert ? '' : 'IF EXISTS'}`,
+  filtering: exp => `${exp.filtering ? 'ALLOW FILTERING' : ''}`,
 });
 
 class CqlBuilderError extends Error {
@@ -110,6 +111,11 @@ class CqlBuilder {
     return this;
   }
 
+  filtering(filter=true) {
+    this.exps.filtering = filter;
+    return this;
+  }
+
   clear() {
     this.exps = {
       keyspace: null,
@@ -122,6 +128,7 @@ class CqlBuilder {
       option: [],
       set: [],
       upsert: false,
+      filtering: false,
     };
     this.vals = {
       where: [],
