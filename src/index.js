@@ -83,7 +83,7 @@ class CqlBuilder {
 
   limit(limit) {
     this.exps.limit = limit > 0;
-    this.vals.limit = limit;
+    this.vals.limit = this.exps.limit ? limit : 0;
     return this;
   }
 
