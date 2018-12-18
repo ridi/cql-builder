@@ -89,6 +89,8 @@ describe('select', () => {
     expect(result1.query).toBe('SELECT * FROM test_table');
     expect(result2.query).toBe('SELECT * FROM test_table');
     expect(result3.query).toBe('SELECT * FROM test_table LIMIT ?');
+    expect(result1.params).toHaveLength(0);
+    expect(result2.params).toHaveLength(0);
     expect(result3.params).toEqual([50]);
   });
   test('with order', () => {
