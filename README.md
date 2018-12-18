@@ -62,10 +62,11 @@ const cql = Select()
     .order('key1 DESC')
     .where('key3 IN (?, ?)', 3000, 4000)
     .option('TTL', 86400)
+    .filtering()
     .build();
 
 // Returns...
-// cql.query = 'SELECT column1, column2, column3 FROM test_keyspace.test_table WHERE key1 = ? AND key2 > ? AND key3 IN (?, ?) ORDER BY key1 DESC LIMIT ?'
+// cql.query = 'SELECT column1, column2, column3 FROM test_keyspace.test_table WHERE key1 = ? AND key2 > ? AND key3 IN (?, ?) ORDER BY key1 DESC LIMIT ? ALLOW FILTERING'
 // cql.params = [1000, 2000, 3000, 4000, 5000]
 ```
 
@@ -76,6 +77,7 @@ const cql = Select()
 * SelectBuilder.where(where, values)
 * SelectBuilder.order(order)
 * SelectBuilder.limit(limit)
+* SelectBuilder.filtering(filtering = true)
 
 ### Update
 

@@ -1,6 +1,6 @@
 {
   "name": "@ridi/cql-builder",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Cassandra CQL Builder",
   "main": "dist/index.js",
   "directories": {
